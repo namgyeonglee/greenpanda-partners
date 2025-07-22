@@ -25,16 +25,36 @@ const ReferralLandingPage = () => {
   };
 
   const handleSubmit = async () => {
-    const phoneNumbers = formData.phone.replace(/[^0-9]/g, '');
-    if (!formData.name || !formData.phone || phoneNumbers.length !== 11) return;
+  const phoneNumbers = formData.phone.replace(/[^0-9]/g, '');
+  if (!formData.name || !formData.phone || phoneNumbers.length !== 11) return;
+  
+  setIsLoading(true);
+  
+  try {
+    // Google Sheets에 데이터 전송
+    const response = await fetch('https://script.google.com/macros/s/AKfycbxixkwnnZVbvbWbZlvytJlfuIdCe6i3ZMMd3pJyVCM8fu795XWgijvX8oC5Bnu1FQl2/exec', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        timestamp: new Date().toLocaleString('ko-KR'),
+        name: formData.name,
+        phone: formData.phone
+      })
+    });
     
-    setIsLoading(true);
-    
-    setTimeout(() => {
+    if (response.ok) {
       setIsSubmitted(true);
-      setIsLoading(false);
-    }, 1000);
-  };
+    } else {
+      alert('등록 중 오류가 발생했습니다. 다시 시도해주세요.');
+    }
+  } catch (error) {
+    alert('등록 중 오류가 발생했습니다. 다시 시도해주세요.');
+  }
+  
+  setIsLoading(false);
+};
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
