@@ -30,30 +30,41 @@ const ReferralLandingPage = () => {
   
   setIsLoading(true);
   
-  try {
-    // Google Sheets에 데이터 전송
-    const response = await fetch('https://script.google.com/macros/s/AKfycbxixkwnnZVbvbWbZlvytJlfuIdCe6i3ZMMd3pJyVCM8fu795XWgijvX8oC5Bnu1FQl2/exec', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        timestamp: new Date().toLocaleString('ko-KR'),
-        name: formData.name,
-        phone: formData.phone
-      })
-    });
-    
-    if (response.ok) {
-      setIsSubmitted(true);
-    } else {
-      alert('등록 중 오류가 발생했습니다. 다시 시도해주세요.');
-    }
-  } catch (error) {
-    alert('등록 중 오류가 발생했습니다. 다시 시도해주세요.');
-  }
+  // 숨겨진 form을 만들어서 제출
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = 'https://script.google.com/macros/s/AKfycbxixkwnnZVbvbWbZlvytJlfuIdCe6i3ZMMd3pJyVCM8fu795XWgijvX8oC5Bnu1FQl2/exec';
+  form.target = '_blank';
   
-  setIsLoading(false);
+  // 데이터 필드 추가
+  const timestampField = document.createElement('input');
+  timestampField.type = 'hidden';
+  timestampField.name = 'timestamp';
+  timestampField.value = new Date().toLocaleString('ko-KR');
+  form.appendChild(timestampField);
+  
+  const nameField = document.createElement('input');
+  nameField.type = 'hidden';
+  nameField.name = 'name';
+  nameField.value = formData.name;
+  form.appendChild(nameField);
+  
+  const phoneField = document.createElement('input');
+  phoneField.type = 'hidden';
+  phoneField.name = 'phone';
+  phoneField.value = formData.phone;
+  form.appendChild(phoneField);
+  
+  // 폼 제출
+  document.body.appendChild(form);
+  form.submit();
+  document.body.removeChild(form);
+  
+  // 성공 표시
+  setTimeout(() => {
+    setIsSubmitted(true);
+    setIsLoading(false);
+  }, 1000);
 };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
