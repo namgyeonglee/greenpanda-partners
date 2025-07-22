@@ -30,41 +30,57 @@ const ReferralLandingPage = () => {
   
   setIsLoading(true);
   
-  // 숨겨진 form을 만들어서 제출
-  const form = document.createElement('form');
-  form.method = 'POST';
-  form.action = 'https://script.google.com/macros/s/AKfycbxixkwnnZVbvbWbZlvytJlfuIdCe6i3ZMMd3pJyVCM8fu795XWgijvX8oC5Bnu1FQl2/exec';
-  form.target = '_blank';
-  
-  // 데이터 필드 추가
-  const timestampField = document.createElement('input');
-  timestampField.type = 'hidden';
-  timestampField.name = 'timestamp';
-  timestampField.value = new Date().toLocaleString('ko-KR');
-  form.appendChild(timestampField);
-  
-  const nameField = document.createElement('input');
-  nameField.type = 'hidden';
-  nameField.name = 'name';
-  nameField.value = formData.name;
-  form.appendChild(nameField);
-  
-  const phoneField = document.createElement('input');
-  phoneField.type = 'hidden';
-  phoneField.name = 'phone';
-  phoneField.value = formData.phone;
-  form.appendChild(phoneField);
-  
-  // 폼 제출
-  document.body.appendChild(form);
-  form.submit();
-  document.body.removeChild(form);
-  
-  // 성공 표시
-  setTimeout(() => {
-    setIsSubmitted(true);
+  try {
+    // 숨겨진 iframe 생성
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.name = 'hidden-form-frame';
+    document.body.appendChild(iframe);
+    
+    // form 생성
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'https://script.google.com/macros/s/AKfycbxixkwnnZVbvbWbZlvytJlfuIdCe6i3ZMMd3pJyVCM8fu795XWgijvX8oC5Bnu1FQl2/exec';
+    form.target = 'hidden-form-frame'; // iframe으로 전송
+    
+    // 데이터 필드 추가
+    const timestampField = document.createElement('input');
+    timestampField.type = 'hidden';
+    timestampField.name = 'timestamp';
+    timestampField.value = new Date().toLocaleString('ko-KR');
+    form.appendChild(timestampField);
+    
+    const nameField = document.createElement('input');
+    nameField.type = 'hidden';
+    nameField.name = 'name';
+    nameField.value = formData.name;
+    form.appendChild(nameField);
+    
+    const phoneField = document.createElement('input');
+    phoneField.type = 'hidden';
+    phoneField.name = 'phone';
+    phoneField.value = formData.phone;
+    form.appendChild(phoneField);
+    
+    // 폼 제출
+    document.body.appendChild(form);
+    form.submit();
+    
+    // 정리
+    document.body.removeChild(form);
+    
+    // 성공 처리 (Google Sheets 저장 완료 시간 고려)
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setIsLoading(false);
+      // iframe 제거
+      document.body.removeChild(iframe);
+    }, 2000);
+    
+  } catch (error) {
     setIsLoading(false);
-  }, 1000);
+    alert('등록 중 오류가 발생했습니다. 다시 시도해주세요.');
+  }
 };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
