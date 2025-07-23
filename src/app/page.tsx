@@ -116,7 +116,7 @@ const ReferralLandingPage = () => {
       <section className="bg-gradient-to-br from-green-50 to-blue-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-snug">
               회원권 거래의 새로운 기준,<br />
               <span className="text-green-600">그린판다 파트너스</span>와 함께하세요
             </h1>
