@@ -121,13 +121,13 @@ const ReferralLandingPage = () => {
               <span className="text-green-600">그린판다 파트너스</span>와 함께하세요
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              디지털 혁신으로 더 쉽고, 더 빠르고, 더 안전한 회원권 거래를 만들어가는<br />
-              그린판다의 파트너가 되어 새로운 수익 기회를 잡으세요
+              디지털 혁신으로 더 쉽고, 빠르고, 안전한 회원권 거래 시장을 만들어가는<br />
+              그린판다의 파트너스가 되어 새로운 수익 기회를 잡으세요
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <div className="bg-white px-6 py-3 rounded-full shadow-md">
                 <span className="text-green-600 font-semibold">✨ 사전 등록 혜택</span>
-                <span className="text-gray-600 ml-2">우선 선발 + 특별 인센티브</span>
+                <span className="text-gray-600 ml-2">우선 선발 + 선착순 이벤트 참여</span>
               </div>
             </div>
           </div>
@@ -141,7 +141,7 @@ const ReferralLandingPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               왜 그린판다 파트너스인가?
             </h2>
-            <p className="text-xl text-gray-600">기존 거래소와는 차원이 다른 혜택과 시스템</p>
+            <p className="text-xl text-gray-600">기존 회원권 거래소와는 차원이 다른 혜택과 시스템</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -153,21 +153,8 @@ const ReferralLandingPage = () => {
               <ul className="space-y-2 text-gray-600">
                 <li>• 10억원 미만: <strong className="text-green-600">거래금액의 0.24%</strong></li>
                 <li>• 10억원 이상: <strong className="text-green-600">거래금액의 0.264%</strong></li>
-                <li>• 즉시 정산 시스템</li>
-                <li>• 누적 거래액 보너스 제공</li>
-              </ul>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                <Shield className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">리스크 최소화</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• 본사가 모든 계약 업무 처리</li>
-                <li>• 전담 CS팀의 고객 불만 대응</li>
-                <li>• 소유권 인증 시스템</li>
-                <li>• 법적 책임 분리</li>
+                <li>• 거래 완료 시 즉시 정산 시스템</li>
+                <li>• 누적 거래액에 따라 보너스 제공</li>
               </ul>
             </div>
 
@@ -177,10 +164,23 @@ const ReferralLandingPage = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">효율적인 업무</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• 고객 발굴과 상담에만 집중</li>
-                <li>• 실시간 거래 현황 대시보드</li>
-                <li>• 자동 알림 시스템</li>
-                <li>• 디지털 거래 프로세스</li>
+                <li>• 고객 오더 등록 및 상담에 집중</li>
+                <li>• 실시간 거래 현황 대시보드 제공</li>
+                <li>• 거래 단계별 자동 알림 시스템 지원</li>
+                <li>• 디지털 거래 프로세스 활용</li>
+              </ul>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                <Shield className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">리스크 최소화</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• 파트너스 노출 없는 안전 거래 보장</li>
+                <li>• 가상계좌를 통한 내 고객의 안전한 대금 정산 보장</li>
+                <li>• 본사 시스템에서 계약 업무 처리</li>
+                <li>• 본사 시스템에서 명의개서 업무 처리</li>
               </ul>
             </div>
           </div>
@@ -191,8 +191,9 @@ const ReferralLandingPage = () => {
       <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              간단한 4단계로 시작하세요
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">
+              누구나 쉽게 4단계로<br />
+              그린판다 파트너스를 시작할 수 있습니다
             </h2>
           </div>
 
@@ -209,16 +210,16 @@ const ReferralLandingPage = () => {
               <div className="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                 2
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">심사 & 교육</h3>
-              <p className="text-gray-600">파트너 자격 심사 및<br />시스템 교육 이수</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">정규 등록</h3>
+              <p className="text-gray-600">2025년 9월 오픈 예정<br />파트너스 자격 심사 및 검증</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                 3
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">고객 발굴</h3>
-              <p className="text-gray-600">레퍼럴 코드로<br />고객 회원가입 유도</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">고객 오더 등록</h3>
+              <p className="text-gray-600">레퍼럴 코드로<br />고객 오더 등록 유도</p>
             </div>
 
             <div className="text-center">
@@ -226,7 +227,7 @@ const ReferralLandingPage = () => {
                 4
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">수익 창출</h3>
-              <p className="text-gray-600">거래 성사 시<br />즉시 수수료 지급</p>
+              <p className="text-gray-600">거래 완료 시<br />즉시 수수료 정산</p>
             </div>
           </div>
         </div>
@@ -240,7 +241,7 @@ const ReferralLandingPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 목표 달성 시 예상 수익
               </h2>
-              <p className="text-xl opacity-90">월 1건 거래 성사 기준</p>
+              <p className="text-lg opacity-90">거래 1건 성사 시, 딜러 최저 수수료 30만원 보장</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 text-center">
@@ -272,12 +273,12 @@ const ReferralLandingPage = () => {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">
                 지금 사전 등록하고<br />
                 <span className="text-green-600">우선 선발 혜택</span>을 받으세요
               </h2>
               <p className="text-lg text-gray-600">
-                사전 등록자에게는 특별 인센티브와 우선 교육 기회를 제공합니다
+                선착순 이벤트 참여 및 우선 교육 기회를 제공합니다
               </p>
             </div>
 
@@ -331,9 +332,8 @@ const ReferralLandingPage = () => {
                   <h4 className="font-semibold text-green-800 mb-2">사전 등록 혜택</h4>
                   <ul className="text-sm text-green-700 space-y-1">
                     <li>• 우선 심사 및 빠른 승인</li>
-                    <li>• 론칭 초기 특별 인센티브 제공</li>
+                    <li>• 선착순 이벤트 자동 참여</li>
                     <li>• 1:1 전담 교육 지원</li>
-                    <li>• VIP 고객 우선 배정</li>
                   </ul>
                 </div>
 
@@ -346,7 +346,7 @@ const ReferralLandingPage = () => {
                 </button>
 
                 <p className="text-xs text-gray-500 text-center">
-                  등록된 정보는 파트너 선발 목적으로만 사용되며, 개인정보보호법에 따라 안전하게 관리됩니다.
+                  등록된 정보는 파트너스 선발 목적으로만 사용되며, 개인정보보호법에 따라 안전하게 관리됩니다.
                 </p>
               </div>
             ) : (
@@ -375,9 +375,9 @@ const ReferralLandingPage = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <div className="text-2xl font-bold text-green-400 mb-4">그린판다</div>
-              <p className="text-gray-400 mb-4">
+              {/* <p className="text-gray-400 mb-4">
                 회원권 거래의 디지털 혁신을 선도하는 플랫폼
-              </p>
+              </p> */}
               <div className="text-sm text-gray-400">
                 <p>서울시 용산구 서빙고로 17, 센트럴파크타워 1206호</p>
                 <p>사업자 등록번호: 768-86-02919 | 대표: 김태훈</p>
