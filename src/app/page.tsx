@@ -5,7 +5,8 @@ import { CheckCircle, TrendingUp, Shield, Clock, Phone, User } from 'lucide-reac
 const ReferralLandingPage = () => {
   const [formData, setFormData] = useState({
     name: '',
-    phone: ''
+    phone: '',
+    hasExperience: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -61,6 +62,12 @@ const ReferralLandingPage = () => {
     phoneField.name = 'phone';
     phoneField.value = formData.phone;
     form.appendChild(phoneField);
+
+    const experienceField = document.createElement('input');
+    experienceField.type = 'hidden';
+    experienceField.name = 'hasExperience';
+    experienceField.value = formData.hasExperience;
+    form.appendChild(experienceField);  
     
     // 폼 제출
     document.body.appendChild(form);
@@ -328,6 +335,36 @@ const ReferralLandingPage = () => {
                   )}
                 </div>
 
+                <div>
+                  <div className="block text-sm font-medium text-gray-700 mb-3">
+                    회원권 딜러 경험이 있으신가요?
+                  </div>
+                  <div className="space-y-3">
+                    <label className="flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="hasExperience"
+                        value="네"
+                        checked={formData.hasExperience === '네'}
+                        onChange={handleInputChange}
+                        className="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 focus:ring-2"
+                      />
+                      <span className="ml-3 text-sm font-medium text-gray-700">네</span>
+                    </label>
+                    <label className="flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="hasExperience"
+                        value="아니요"
+                        checked={formData.hasExperience === '아니요'}
+                        onChange={handleInputChange}
+                        className="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 focus:ring-2"
+                      />
+                      <span className="ml-3 text-sm font-medium text-gray-700">아니요</span>
+                    </label>
+                  </div>
+                </div>
+
                 <div className="bg-green-50 p-4 rounded-lg">
                   <h4 className="font-semibold text-green-800 mb-2">사전 등록 혜택</h4>
                   <ul className="text-sm text-green-700 space-y-1">
@@ -339,7 +376,7 @@ const ReferralLandingPage = () => {
 
                 <button
                   onClick={handleSubmit}
-                  disabled={isLoading || !formData.name || !formData.phone || formData.phone.replace(/[^0-9]/g, '').length !== 11}
+                  disabled={isLoading || !formData.name || !formData.phone || formData.phone.replace(/[^0-9]/g, '').length !== 11 || !formData.hasExperience}
                   className="w-full bg-green-600 text-white py-4 rounded-lg font-semibold text-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isLoading ? '등록 중...' : '지금 사전 등록하기'}
