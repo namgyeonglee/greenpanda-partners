@@ -425,7 +425,7 @@ const ReferralLandingPage = () => {
               <h4 className="text-lg font-semibold mb-4">문의하기</h4>
               <div className="text-gray-400 space-y-2">
                 <p>파트너스 관련 문의</p>
-                <p>이메일: partners@greenpanda.app</p>
+                <p>이메일: contact@44labs.com</p>
                 <p>운영시간: 평일 09:00-18:00</p>
               </div>
             </div>
