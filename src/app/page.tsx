@@ -248,7 +248,7 @@ const ReferralLandingPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 목표 달성 시 예상 수익
               </h2>
-              <p className="text-lg opacity-90">거래 1건 성사 시, 딜러 최저 수수료 30만원 보장</p>
+              <p className="text-lg opacity-90">거래 1건 성사 시, 딜러 최저 수수료 18만원 보장</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 text-center">
