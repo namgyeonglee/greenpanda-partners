@@ -113,7 +113,11 @@ const ReferralLandingPage = () => {
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-green-600">그린판다</div>
+            <img 
+              src="/logo.svg" 
+              alt="그린판다" 
+              className="h-6 w-auto"
+            />
             <div className="ml-2 text-sm text-gray-500">Partners</div>
           </div>
         </div>
@@ -411,7 +415,12 @@ const ReferralLandingPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <div className="text-2xl font-bold text-green-400 mb-4">그린판다</div>
+              <img 
+                src="/logo_white.svg" 
+                alt="그린판다" 
+                className="h-6 w-auto mb-4"
+              />
+              {/* <div className="text-2xl font-bold text-green-400 mb-4">그린판다</div> */}
               {/* <p className="text-gray-400 mb-4">
                 회원권 거래의 디지털 혁신을 선도하는 플랫폼
               </p> */}
